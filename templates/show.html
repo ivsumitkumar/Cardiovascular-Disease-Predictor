@@ -1,110 +1,158 @@
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     <style>
-    *{
-    margin: 0;
-    padding: 0;
-    font-family: sans-serif;
-}
-.hero{
-    width: 100%;
-    height: 100vh;
-    background-image: url(static/background.png);
-    background-size: cover;
-    background-position: center;
-    position: relative;
-    overflow: hidden;
-}
+      * {
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif;
+      }
+      .hero {
+        width: 100%;
+        height: 100vh;
+        background: url(static/background.png);
+        background-size: cover;
+        background-position: center;
+        position: relative;
+        overflow: hidden;
+      }
 
-.content{
-    color: #fbfcfd;
-    position: absolute;
-    top: 50%;
-    left: 8%;
-    transform: translateY(-50%);
-    z-index: 2;
-}
+      .content {
+        color: #000;
+        position: absolute;
+        top: 50%;
+        left: 25%;
+        transform: translateY(-50%);
+        z-index: 2;
+      }
+      .dataTable {
+        width: 100%;
+      }
+      .dataTable tr td {
+        font-size: 20px;
+      }
+      .dataTable th {
+        text-align: left;
+        font-weight: bolder;
+      }
+      .percent {
+        color: red;
+      }
 
-h1{
-    font-size: 80px;
-    margin: 10px 0 30px;
-    line-height: 80px;
+      .result {
+        font-size: 20px;
+        font-weight: bold;
+      }
+      .result.value {
+        color: red;
+      }
 
-}
-    .bubbles img{
-    width: 50px;
-    animation: bubble 4s linear infinite;
-}
+      h1 {
+        font-size: 80px;
+        margin: 10px 0 30px;
+        line-height: 80px;
+      }
+      .bubbles img {
+        width: 50px;
+        animation: bubble 4s linear infinite;
+      }
 
-.bubbles{
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    position: absolute;
-    bottom: -70px;
-}
-    @keyframes bubble{
-    0%{
-        transform: translateY(0);
-        opacity: 0;
-    }
-    50%{
-        opacity: 1;
-    }
-    70%{
-        opacity: 1;
-    }
-    100%{
-        transform: translateY(-80vh);
-        opacity: 0;
-    }
-}
+      .bubbles {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        position: absolute;
+        bottom: -70px;
+      }
+      @keyframes bubble {
+        0% {
+          transform: translateY(0);
+          opacity: 0;
+        }
+        50% {
+          opacity: 1;
+        }
+        70% {
+          opacity: 1;
+        }
+        100% {
+          transform: translateY(-110vh);
+          opacity: 0;
+        }
+      }
 
-.bubbles img:nth-child(1){
-    animation-delay: 2s;
-    width: 25px;
-}
-.bubbles img:nth-child(2){
-    animation-delay: 1s;
-}
-.bubbles img:nth-child(3){
-    animation-delay: 3s;
-    width: 25px;
-}
-.bubbles img:nth-child(4){
-    animation-delay: 4.5s;
-}
-.bubbles img:nth-child(5){
-    animation-delay: 3s;
-}
-.bubbles img:nth-child(6){
-    animation-delay: 6s;
-    width: 20px;
-}
-.bubbles img:nth-child(7){
-    animation-delay: 7s;
-    width: 35px;
-}
+      .bubbles img:nth-child(1) {
+        animation-delay: 2s;
+        width: 25px;
+      }
+      .bubbles img:nth-child(2) {
+        animation-delay: 1s;
+      }
+      .bubbles img:nth-child(3) {
+        animation-delay: 3s;
+        width: 25px;
+      }
+      .bubbles img:nth-child(4) {
+        animation-delay: 4.5s;
+      }
+      .bubbles img:nth-child(5) {
+        animation-delay: 3s;
+      }
+      .bubbles img:nth-child(6) {
+        animation-delay: 6s;
+        width: 20px;
+      }
+      .bubbles img:nth-child(7) {
+        animation-delay: 7s;
+        width: 35px;
+      }
     </style>
-</head>
-<body>
-
-<div class="hero">
-            <div class="content">
-            <h1>Hello {{uname}}</h1>
-            <h2>You have {{inf}}% chance of having heart diseases</h2>
-        </div>
-        <div class="bubbles">
-            <img src="static/bubble.png">
-            <img src="static/bubble.png">
-            <img src="static/bubble.png">
-            <img src="static/bubble.png">
-            <img src="static/bubble.png">
-            <img src="static/bubble.png">
-            <img src="static/bubble.png">
-        </div>
-</div>
-</body>
+  </head>
+  <body>
+    <div class="hero">
+      <div class="content">
+        <table class="dataTable">
+          <tr>
+            <th>Features</th>
+            <th>Patient Details</th>
+          </tr>
+          <tr>
+            <td>Name</td>
+            <td>{{name}}</td>
+          </tr>
+          <tr>
+            <td>Age</td>
+            <td>{{age}}</td>
+          </tr>
+          <tr>
+            <td>Sex</td>
+            <td>{{sex}}</td>
+          </tr>
+          <tr>
+            <td class="result">Result</td>
+            <td class="result value">{{result}}</td>
+          </tr>
+        </table>
+        <!-- <h1>Hello {{name}}</h1> -->
+        <br />
+        <h2>
+          You have <span class="percent">{{inf}}%</span> chance of having heart
+          diseases
+        </h2>
+        <br />
+        <h3>*This result does not have standard medical approval.</h3>
+        <h3>So for final result please approach a doctor.</h3>
+      </div>
+      <div class="bubbles">
+        <img src="static/heart2.png" />
+        <img src="static/heart2.png" />
+        <img src="static/heart2.png" />
+        <img src="static/heart2.png" />
+        <img src="static/heart2.png" />
+        <img src="static/heart2.png" />
+        <img src="static/heart2.png" />
+      </div>
+    </div>
+  </body>
 </html>

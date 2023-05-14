@@ -171,28 +171,37 @@ h1{
   <form id="contact" action="" method="POST">
     <h3>Please Fill this form</h3>
     <fieldset id="name">
-      <input placeholder="Name" name="name" type="text" tabindex="1" required autofocus>
+      <label for="sex">Name</label>
+      <input placeholder="your name here" name="name" type="text" tabindex="1" required autofocus>
     </fieldset>
+
     <fieldset id="cp">
-      <input placeholder="chest pain type (0,1,2,3)" name="cp" type="text" tabindex="1" required autofocus>
+      <label for="chestpain">chest pain type</label>
+      <input placeholder="(0,1,2,3)" name="cp" type="text" tabindex="1" required autofocus>
     </fieldset>
-      <fieldset id="trestbps">
-      <input placeholder="resting blood pressure" name="trestbps" type="text" tabindex="1" required autofocus>
-    </fieldset>
-            <div class="container">
+
+    <fieldset id="trestbps">
+        <label for="rbp">resting blood pressure</label>
+        <input placeholder="resting blood pressure" name="trestbps" type="text" tabindex="1" required autofocus>
+      </fieldset>
+
+  <div class="container">
     <label for="sex">Gender</label>
     <select class="custom-select mr-sm-2" id="sex" name="sex">
-      <option value="1">Male</option>
-      <option value="0">Female</option>
-    </select>
+    <option value="1">Male</option>
+    <option value="0">Female</option>
+  </select>
   </div>
     <fieldset id="age">
-      <input placeholder="Age" name="age" type="text" tabindex="1" required autofocus>
-    </fieldset>
-      <fieldset id="fbs">
-      <input placeholder="fasting blood sugar > 120 mg/dl" name="fbs" type="text" tabindex="1" required autofocus>
-    </fieldset>
-            <fieldset id="chol">
+  <label for="age">Age</label>
+  <input placeholder="Age" name="age" type="text" tabindex="1" required autofocus>
+</fieldset>
+<fieldset id="fbs">
+        <label for="fasting blood sugar">fasting blood sugar</label>
+        <input placeholder="fasting blood sugar > 120 mg/dl" name="fbs" type="text" tabindex="1" required autofocus>
+      </fieldset>
+      <fieldset id="chol">
+              <label for="serum cholestrol">serum cholestrol</label>
       <input placeholder="serum cholestoral in mg/dl" name="chol" type="text" tabindex="1" required autofocus>
     </fieldset>
           <fieldset>
@@ -224,7 +233,8 @@ h1{
     </select>
   </div>
     </fieldset>
-                  <fieldset name="thalach">
+   <fieldset name="thalach">
+    <label for="max heart rate">maximum heart rate achieved</label>
       <input placeholder="maximum heart rate achieved" name="thalach" type="text" tabindex="1" required autofocus>
     </fieldset>
             <div class="container">
@@ -236,10 +246,12 @@ h1{
   </div>
        </fieldset>
                   <fieldset name="oldpeak">
+    <label for="oldpeak">oldPeak</label>
       <input placeholder="oldpeak = ST depression induced by exercise relative to rest" name="oldpeak" type="text" tabindex="1" required autofocus>
     </fieldset>
        </fieldset>
                   <fieldset name="thal">
+                    <label for="Thal">Thal</label>
       <input placeholder="Thal" name="thal" type="text" tabindex="1" required autofocus>
     </fieldset>
       <fieldset>

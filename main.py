@@ -30,7 +30,10 @@ def hello_world():
         print(enter)
         infProb = clf.predict_proba([enter])
         x = infProb[0][1]*100
-        return render_template('show.html',uname=name,inf = int(x))
+        result=''
+        if x>50: result='you need to consult a doctor asap'
+        else: result='No need to worry'
+        return render_template('show.html',name=name,inf = int(x),age=age,sex='male' if sex==1 else 'female',result=result)
     return render_template('index.html')
 
 if __name__ == '__main__':
