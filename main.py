@@ -25,7 +25,6 @@ def hello_world():
         exang = int(myDict['exang'])
         oldpeak = float(myDict['oldpeak'])
         thal = int(myDict['thal'])
-        print(myDict)
         enter = [age,sex,cp,trestbps,chol,fbs,restecg,thalach,exang,oldpeak,slope,ca,thal]
         print(enter)
         infProb = clf.predict_proba([enter])
